@@ -33,6 +33,10 @@ class Matriz():
         print("-"*5 + "traspuesta" + "-"*5 + "\n")
         return Matriz(self.getValores().T)
     
+    def determinante(self):
+        print("-"*5 + "determinante" + "-"*5 + "\n")
+        return Matriz(np.linalg.det(self.getValores()))
+    
     def getFilas(self):
         return self.__filas
     

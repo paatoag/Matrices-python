@@ -42,5 +42,12 @@ def run ():
     identidad = Matriz(np.eye(10, dtype = int))
     identidad.representacion()
     
+    C = np.array([[3, 0, 1],[-2, 4, 5], [2, 3, -4]])
+    mc = Matriz(C)
+    
+    #determinante
+    determinante = mc.determinante()
+    determinante.representacion()
+    
 if __name__ == '__main__':
     run()
