@@ -1,5 +1,6 @@
 
 from Matriz import Matriz
+import numpy as np
 
 def run ():
     array_bi = [[1, 2],

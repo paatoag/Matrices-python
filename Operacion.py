@@ -7,6 +7,11 @@ class Operacion:
     def __init__(self) -> None:
         pass
     
-    def sumaMatriz(self, m1, m2) -> Matriz:
-        
-        
+    def matSum(self, m1, m2) -> Matriz:
+        pass
+    
+    def matRest(self, m1, m2) -> Matriz:
+        pass
+    
+    def matMul(self, m1, m2) -> Matriz:
+        pass
