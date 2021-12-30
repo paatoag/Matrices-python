@@ -42,12 +42,20 @@ def run ():
     identidad = Matriz(np.eye(10, dtype = int))
     identidad.representacion()
     
-    C = np.array([[3, 0, 1],[-2, 4, 5], [2, 3, -4]])
+    C = np.array([[-2, 0, 5],[4, -5, 2], [1, 4, 2]])
     mc = Matriz(C)
     
     #determinante
     determinante = mc.determinante()
-    determinante.representacion()
+    print(determinante)
     
+    C = np.matrix([[-2, 0, 5],[4, -5, 2], [1, 4, 2]])
+    mc = Matriz(C)
+    
+    #matriz inversa
+    print(type(mc))
+    
+
+            
 if __name__ == '__main__':
     run()

@@ -35,7 +35,12 @@ class Matriz():
     
     def determinante(self):
         print("-"*5 + "determinante" + "-"*5 + "\n")
-        return Matriz(np.linalg.det(self.getValores()))
+        return np.linalg.det(self.getValores())
+
+    def inversa(self):
+        aux = Matriz()
+
+        return 0
     
     def getFilas(self):
         return self.__filas
