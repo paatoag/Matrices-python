@@ -54,7 +54,6 @@ def run ():
     
     #matriz inversa
     print(type(mc))
-    
 
             
 if __name__ == '__main__':
