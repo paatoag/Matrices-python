@@ -15,43 +15,46 @@ class Matriz():
         print("\n")
     
     def suma(self, b):
-        print("-"*5 + "suma" + "-"*5 + "\n")
         return Matriz(self.getValores() + np.mat(b.getValores()))
     
     def resta(self, b):
-        print("-"*5 + "resta" + "-"*5 + "\n")
         return Matriz(self.getValores() - np.mat(b.getValores()))
     
-    def multEscalar(self, k):
-        print("-"*5 + "multiplicacion (k)" + "-"*5 + "\n")       
+    def multEscalar(self, k):     
         return Matriz(np.mat(self.getValores() * k))
     
     def multMat(self, b):
-        print("-"*5 + "multiplicación" + "-"*5 + "\n")
         return Matriz(np.matmul(self.getValores(), b.getValores()))
     
     def traspuesta(self):
-        print("-"*5 + "traspuesta" + "-"*5 + "\n")
         return Matriz(self.getValores().T)
     
     def determinante(self):
-        print("-"*5 + "determinante" + "-"*5 + "\n")
         return np.linalg.det(self.getValores())
 
-    def showInversa(self, inversa):
+    def showInversa(self, inversa, tamano):
         det = int(self.determinante())
         texto = ""
-        for i in range(self.__filas):
-            num1 = int(inversa[i, 0] * det)
-            num2 = int(inversa[i, 1] * det)
-            num3 = int(inversa[i, 2] * det)
-            texto += f"{num1}/{det} | {num2}/{det} | {num3}/{det} |\n"
         
-        return texto 
+        if tamano == 3:
+            for i in range(self.__filas):
+                num1 = int(inversa[i, 0] * det)
+                num2 = int(inversa[i, 1] * det)
+                num3 = int(inversa[i, 2] * det)
+                texto += f"{num1}/{det} | {num2}/{det} | {num3}/{det} |\n"
+        elif tamano == 2:
+            for i in range(self.__filas):
+                num1 = int(inversa[i, 0] * det)
+                num2 = int(inversa[i, 1] * det)
+                texto += f"{num1}/{det} | {num2}/{det} |\n"
+        print(texto)
         
-    def inversa(self):
+    def inversa(self, tamano):
         inversa = self.getValores().I
-        return inversa
+        return self.showInversa(inversa, tamano)
+    
+    def identidad(self, tamano):
+        return np.eye(tamano, dtype = int)
     
     def getFilas(self):
         return self.__filas
