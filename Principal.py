@@ -4,8 +4,8 @@ import numpy as np
 
 def run ():
     
-    A = np.array([[3, 4, -5],[2, 7, 1], [0, -3, 5]])
-    B = np.array([[-5,-7, 3],[3, -1, 0], [2, 5, 4]])
+    A = np.array([[-3, 4, 1],[0, 3, -2], [4, 5, 3]])
+    B = np.array([[3,-1, 1],[0, -2, 4], [5, 3, 1]])
     
     ma = Matriz(A)
     mb = Matriz(B)
@@ -47,14 +47,16 @@ def run ():
     
     #determinante
     determinante = mc.determinante()
-    print(determinante)
+    print(int(determinante))
     
     C = np.matrix([[-2, 0, 5],[4, -5, 2], [1, 4, 2]])
     mc = Matriz(C)
     
     #matriz inversa
-    print(type(mc))
+    inversa = mc.inversa()
+    print(inversa)
 
+    print(mc.showInversa(inversa))
             
 if __name__ == '__main__':
     run()

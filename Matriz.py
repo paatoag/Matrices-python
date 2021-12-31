@@ -1,5 +1,6 @@
 
 import numpy as np
+from numpy.core import numeric
 
 class Matriz():
     
@@ -37,10 +38,20 @@ class Matriz():
         print("-"*5 + "determinante" + "-"*5 + "\n")
         return np.linalg.det(self.getValores())
 
+    def showInversa(self, inversa):
+        det = int(self.determinante())
+        texto = ""
+        for i in range(self.__filas):
+            num1 = int(inversa[i, 0] * det)
+            num2 = int(inversa[i, 1] * det)
+            num3 = int(inversa[i, 2] * det)
+            texto += f"{num1}/{det} | {num2}/{det} | {num3}/{det} |\n"
+        
+        return texto 
+        
     def inversa(self):
-        aux = Matriz()
-
-        return 0
+        inversa = self.getValores().I
+        return inversa
     
     def getFilas(self):
         return self.__filas
@@ -50,4 +61,3 @@ class Matriz():
     
     def getValores(self):
         return self.__valores
-    
